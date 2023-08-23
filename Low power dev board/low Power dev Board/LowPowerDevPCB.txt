@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc
+Date         : 24/07/2023
+Time         : 15:04:43
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 98.26%
+    Connections, 115
+    Connections routed, 113
+    Connections remaining, 2
+count : 4

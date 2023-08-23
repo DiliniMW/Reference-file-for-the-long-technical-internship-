@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=D1 Old Footprint=Diotec_1N4007_MFG New Footprint=Diode_SMD
+Add object: Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))
+Add Pin To Net: Unknown Pin: Pin D-A
+Add Pin To Net: Unknown Pin: Pin D-C
+Add Class Member: Failed to add class member : Component D SS12-E3/61T

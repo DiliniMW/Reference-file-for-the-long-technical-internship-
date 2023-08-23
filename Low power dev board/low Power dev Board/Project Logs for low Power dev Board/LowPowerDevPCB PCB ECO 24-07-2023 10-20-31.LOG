@@ -1,0 +1,8 @@
+Added Component: Designator=CR1(SMA(DO-214AC)_VIS)
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetD_C Pin=CR1-1
+Added Pin To Net: NetName=NetCap1_2 Pin=CR1-2
+Change Net Name : Old Net Name=NetD_C New Net Name=NetCR1_1
+Added Member To Class: ClassName=Power Member=Component CR1 SS12-E3/61T

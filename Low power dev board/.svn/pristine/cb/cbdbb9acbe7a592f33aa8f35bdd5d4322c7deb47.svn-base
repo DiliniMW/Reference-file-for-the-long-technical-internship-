@@ -1,0 +1,488 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">31/07/2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">08:53:26</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc" class="file"><acronym title="D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc">D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">44</td></tr>
+</table>
+</td>
+</table><a name="ID5W4ZEY5NRRCZFOP2ETAYZL030F5HKW1SQCWMELFUKTH54EE2ZLAG"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDBDL10UMDE5PD4AF5ZCY2ZD2BCR2A4REPMQH5IEQUHEMOQE5UCQH">Clearance Constraint (Gap=7.874mil) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDV4BZHDWZ1MPJCYLEI2BL0DPCSGVZR3QBXADZMSLAPZMEHMWFFEPN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDILSUUGJYOBYLEQP55N2ITRQNWFBIHWDJVOW1XOB3UD3SA5VN1SPI">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJWGR31R05R0ABYWITVTAAOYXBBTE4UEMPSY0CEFFIFUGMIAXTFRP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVMBZT204WNQ3C4Z5FON3UZNFB5HJN12KRAMFVF3KAGQ0ZMMTB5C">Width Constraint (Min=12mil) (Max=15mil) (Preferred=13mil) (InNetClass('Other'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2SBBCWB5IZQPLODOMMJOKQPXOCALSG5YM31XJ0NMQFPYH20I3BQN">Width Constraint (Min=12mil) (Max=22mil) (Preferred=20mil) (InNetClass('Power'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4Y012DIEFXEQBBX4GSBVXSYVTFDVEBHJFF3DPKJ5LMDX1KPHJBBB">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDG0MMYGEP5WJODNZE5R51EQORDJR2VP3EKE0B30HSUZTEFIOGD3UI">Hole Size Constraint (Min=7.874mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZ0W235FL5IV3GUGKRLADPY051P25YOXU4LA1GVDWDVXKOAPMTAKF">Hole To Hole Clearance (Gap=19.685mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDT4DHADI3IA0IGQ4P1Y5CF4BXOKNXXD4HG1MMEPMIQ00FGFQG2LNM">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRQ1W5L1XDI3LJDUN0ABLUOKZNFHL1DY0CJASXVGT43KJ3HYQVAVD">Silk To Solder Mask (Clearance=3.937mil) (IsPad),(All)</a></td>
+<td class="column2">28</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJJQ4BM03AXCVL0I4LJ422D5Q0JBBBEZQPPEI3BEK5LZHJCZWFOVJ">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDF2G4B03GR4OKQ2ODXISSOVWCIT3A1CLZLE1NGIKC3D3S1SR4OVM">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA3YQ1XD3AZYUGUOLBDUSD2HAUJ5YRKK2ODYTBKM003TUNKWMDHHJ">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDG5VXM3N2T0BPLU2U5ND0IOZ3YLIT2ASC51RUCENR2M3IPYYCW4YJ">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">44</td>
+</tr>
+</table><br><a name="IDDBDL10UMDE5PD4AF5ZCY2ZD2BCR2A4REPMQH5IEQUHEMOQE5UCQH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=7.874mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2042.973mil|Location2.Y=2052.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2042.973mil|Location2.Y=2052.097mil|Absolute=True">Clearance Constraint: (2.002mil &lt; 7.874mil) Between Pad CR1-1(-599.323mil,-634.866mil) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2042.973mil|Location2.Y=2052.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2042.973mil|Location2.Y=2052.097mil|Absolute=True">Clearance Constraint: (2.002mil &lt; 7.874mil) Between Pad CR1-1(-599.323mil,-634.866mil) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2128.973mil|Location2.Y=2138.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2128.973mil|Location2.Y=2138.097mil|Absolute=True">Clearance Constraint: (1.998mil &lt; 7.874mil) Between Pad CR1-2(-599.323mil,-472.866mil) on Bottom Layer And Region (0 hole(s)) Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2128.973mil|Location2.Y=2138.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3223.14mil|Location2.X=3232.264mil|Location1.Y=2128.973mil|Location2.Y=2138.097mil|Absolute=True">Clearance Constraint: (1.998mil &lt; 7.874mil) Between Pad CR1-2(-599.323mil,-472.866mil) on Bottom Layer And Region (0 hole(s)) Keep-Out Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDILSUUGJYOBYLEQP55N2ITRQNWFBIHWDJVOW1XOB3UD3SA5VN1SPI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3592mil|Location2.X=3796.259mil|Location1.Y=3078.937mil|Location2.Y=3208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3592mil|Location2.X=3796.259mil|Location1.Y=3078.937mil|Location2.Y=3208mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (-260.525mil,555.6mil) from Top Layer to Bottom Layer And Pad U1-27(-76.077mil,439.458mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3247.024mil|Location2.X=3462.518mil|Location1.Y=2713.379mil|Location2.Y=2984.89mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3247.024mil|Location2.X=3462.518mil|Location1.Y=2713.379mil|Location2.Y=2984.89mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track (-513.501mil,167.443mil)(-513.501mil,168.979mil) on Bottom Layer And Track (-516.55mil,259.034mil)(-498.006mil,240.49mil) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDT4DHADI3IA0IGQ4P1Y5CF4BXOKNXXD4HG1MMEPMIQ00FGFQG2LNM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.962mil|Location2.X=3794.149mil|Location1.Y=2451.277mil|Location2.Y=2456.464mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.962mil|Location2.X=3794.149mil|Location1.Y=2451.277mil|Location2.Y=2456.464mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.702mil &lt; 3.937mil) Between Pad U2-1(-42.394mil,-177.733mil) on Bottom Layer And Pad U2-2(-42.394mil,-203.325mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.702mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.962mil|Location2.X=3794.149mil|Location1.Y=2425.686mil|Location2.Y=2430.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.962mil|Location2.X=3794.149mil|Location1.Y=2425.686mil|Location2.Y=2430.873mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.7mil &lt; 3.937mil) Between Pad U2-2(-42.394mil,-203.325mil) on Bottom Layer And Pad U2-3(-42.394mil,-228.915mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.7mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.962mil|Location2.X=3794.149mil|Location1.Y=2400.096mil|Location2.Y=2405.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3788.962mil|Location2.X=3794.149mil|Location1.Y=2400.096mil|Location2.Y=2405.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.7mil &lt; 3.937mil) Between Pad U2-3(-42.394mil,-228.915mil) on Bottom Layer And Pad U2-4(-42.394mil,-254.505mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.7mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3672.82mil|Location2.X=3678.007mil|Location1.Y=2400.096mil|Location2.Y=2405.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3672.82mil|Location2.X=3678.007mil|Location1.Y=2400.096mil|Location2.Y=2405.283mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.7mil &lt; 3.937mil) Between Pad U2-5(-211.686mil,-254.505mil) on Bottom Layer And Pad U2-6(-211.686mil,-228.915mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.7mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3672.82mil|Location2.X=3678.007mil|Location1.Y=2425.686mil|Location2.Y=2430.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3672.82mil|Location2.X=3678.007mil|Location1.Y=2425.686mil|Location2.Y=2430.873mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.7mil &lt; 3.937mil) Between Pad U2-6(-211.686mil,-228.915mil) on Bottom Layer And Pad U2-7(-211.686mil,-203.325mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.7mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3672.82mil|Location2.X=3678.007mil|Location1.Y=2451.277mil|Location2.Y=2456.464mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3672.82mil|Location2.X=3678.007mil|Location1.Y=2451.277mil|Location2.Y=2456.464mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.702mil &lt; 3.937mil) Between Pad U2-7(-211.686mil,-203.325mil) on Bottom Layer And Pad U2-8(-211.686mil,-177.733mil) on Bottom Layer [Bottom Solder] Mask Sliver [3.702mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRQ1W5L1XDI3LJDUN0ABLUOKZNFHL1DY0CJASXVGT43KJ3HYQVAVD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=3.937mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=2962.765mil|Location2.Y=2967.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=2962.765mil|Location2.Y=2967.952mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-1(-649.86mil,326.959mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3193.081mil|Location2.Y=3198.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3193.081mil|Location2.Y=3198.268mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-10(-649.86mil,557.275mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3218.671mil|Location2.Y=3223.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3218.671mil|Location2.Y=3223.858mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-11(-649.86mil,582.865mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3244.261mil|Location2.Y=3249.448mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3244.261mil|Location2.Y=3249.448mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-12(-649.86mil,608.455mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3269.853mil|Location2.Y=3275.04mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3269.853mil|Location2.Y=3275.04mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-13(-649.86mil,634.047mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3295.443mil|Location2.Y=3300.63mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3295.443mil|Location2.Y=3300.63mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-14(-649.86mil,659.637mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3295.443mil|Location2.Y=3300.63mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3295.443mil|Location2.Y=3300.63mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-15(-879.608mil,659.637mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3269.853mil|Location2.Y=3275.04mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3269.853mil|Location2.Y=3275.04mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-16(-879.608mil,634.047mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3244.261mil|Location2.Y=3249.448mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3244.261mil|Location2.Y=3249.448mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-17(-879.608mil,608.455mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3218.671mil|Location2.Y=3223.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3218.671mil|Location2.Y=3223.858mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-18(-879.608mil,582.865mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3193.081mil|Location2.Y=3198.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3193.081mil|Location2.Y=3198.268mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-19(-879.608mil,557.275mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=2988.357mil|Location2.Y=2993.544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=2988.357mil|Location2.Y=2993.544mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-2(-649.86mil,352.551mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3167.491mil|Location2.Y=3172.678mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3167.491mil|Location2.Y=3172.678mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-20(-879.608mil,531.685mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3141.899mil|Location2.Y=3147.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3141.899mil|Location2.Y=3147.086mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-21(-879.608mil,506.093mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3116.309mil|Location2.Y=3121.496mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3116.309mil|Location2.Y=3121.496mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-22(-879.608mil,480.503mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3090.719mil|Location2.Y=3095.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3090.719mil|Location2.Y=3095.906mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-23(-879.608mil,454.913mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3065.129mil|Location2.Y=3070.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3065.129mil|Location2.Y=3070.316mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-24(-879.608mil,429.323mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3039.537mil|Location2.Y=3044.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3039.537mil|Location2.Y=3044.724mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-25(-879.608mil,403.731mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3013.947mil|Location2.Y=3019.134mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=3013.947mil|Location2.Y=3019.134mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-26(-879.608mil,378.141mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=2988.357mil|Location2.Y=2993.544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=2988.357mil|Location2.Y=2993.544mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-27(-879.608mil,352.551mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=2962.765mil|Location2.Y=2967.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2999.073mil|Location2.X=3004.26mil|Location1.Y=2962.765mil|Location2.Y=2967.952mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-28(-879.608mil,326.959mil) on Top Layer And Track (-854.608mil,304.731mil)(-854.608mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3013.947mil|Location2.Y=3019.134mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3013.947mil|Location2.Y=3019.134mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-3(-649.86mil,378.141mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3039.537mil|Location2.Y=3044.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3039.537mil|Location2.Y=3044.724mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-4(-649.86mil,403.731mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3065.129mil|Location2.Y=3070.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3065.129mil|Location2.Y=3070.316mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-5(-649.86mil,429.323mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3090.719mil|Location2.Y=3095.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3090.719mil|Location2.Y=3095.906mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-6(-649.86mil,454.913mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3116.309mil|Location2.Y=3121.496mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3116.309mil|Location2.Y=3121.496mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-7(-649.86mil,480.503mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3141.899mil|Location2.Y=3147.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3141.899mil|Location2.Y=3147.086mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-8(-649.86mil,506.093mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3167.491mil|Location2.Y=3172.678mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3187.321mil|Location2.X=3192.508mil|Location1.Y=3167.491mil|Location2.Y=3172.678mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.5mil &lt; 3.937mil) Between Pad U3-9(-649.86mil,531.685mil) on Top Layer And Track (-674.86mil,304.731mil)(-674.86mil,681.865mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.5mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJJQ4BM03AXCVL0I4LJ422D5Q0JBBBEZQPPEI3BEK5LZHJCZWFOVJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3512.783mil|Location2.X=3524.033mil|Location1.Y=2482.344mil|Location2.Y=2493.594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3512.783mil|Location2.X=3524.033mil|Location1.Y=2482.344mil|Location2.Y=2493.594mil|Absolute=True">Silk To Silk Clearance Constraint: (0.609mil &lt; 10mil) Between Text "*" (-307.406mil,-165.915mil) on Bottom Overlay And Track (-421.658mil,-154.319mil)(-344.658mil,-154.319mil) on Bottom Overlay Silk Text to Silk Clearance [0.609mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDA3YQ1XD3AZYUGUOLBDUSD2HAUJ5YRKK2ODYTBKM003TUNKWMDHHJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3683.512mil|Location2.X=3692.636mil|Location1.Y=3795.343mil|Location2.Y=3804.467mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3683.512mil|Location2.X=3692.636mil|Location1.Y=3795.343mil|Location2.Y=3804.467mil|Absolute=True">Board Outline Clearance(Outline Edge): (4.915mil &lt; 7.874mil) Between Board Edge And Track (-172.451mil,583.618mil)(-172.451mil,1150.548mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.18mil|Location2.X=3338.304mil|Location1.Y=3795.343mil|Location2.Y=3804.467mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.18mil|Location2.X=3338.304mil|Location1.Y=3795.343mil|Location2.Y=3804.467mil|Absolute=True">Board Outline Clearance(Outline Edge): (4.915mil &lt; 7.874mil) Between Board Edge And Track (-526.783mil,1150.548mil)(-172.451mil,1150.548mil) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.18mil|Location2.X=3338.304mil|Location1.Y=3795.343mil|Location2.Y=3804.467mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\SLT-Internship\projects\Low power dev board\low Power dev Board\LowPowerDevPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.18mil|Location2.X=3338.304mil|Location1.Y=3795.343mil|Location2.Y=3804.467mil|Absolute=True">Board Outline Clearance(Outline Edge): (4.915mil &lt; 7.874mil) Between Board Edge And Track (-526.783mil,829.682mil)(-526.783mil,1150.548mil) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

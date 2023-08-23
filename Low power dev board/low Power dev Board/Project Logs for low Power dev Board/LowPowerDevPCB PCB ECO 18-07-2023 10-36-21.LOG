@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=USB to Serial Converter NewDesignator=U3
+Change Net Name : Old Net Name=NetUSB1_2 New Net Name=NetU3_16
+Change Net Name : Old Net Name=NetUSB1_3 New Net Name=NetU3_15

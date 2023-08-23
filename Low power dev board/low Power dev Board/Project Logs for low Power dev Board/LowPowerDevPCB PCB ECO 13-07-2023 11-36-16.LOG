@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=NetC4_1 Pin=C4-1
+Added Pin To Net: NetName=NetC4_1 Pin=R1-1
+Added Pin To Net: NetName=NetC4_1 Pin=U1-23
+Added Pin To Net: NetName=NetC4_1 Pin=USB to Serial Converter-2
+Added Net: Name=NetC4_1

@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=NetCap1_2 Pin=D4-A
+Removed Pin From Net: NetName=NetD4_C Pin=D4-C
+Removed Member From Class: ClassName=Power Member=D4
+Change Component Designator: OldDesignator=2222 NewDesignator=U3
+Change component parameters: Designator = "C8" ("C8"); Footprint = "Cap_0805"; UniqueID = "\BQPTMUYZ\DJDEFSPB" ("\BQPTMUYZ\DJDEFSPB")
+Change component parameters (AddParameter): Name = "Parameter 1"; Value = "100nF"; VariantName = "[No Variations]"
+Add object: Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))
+Add Pin To Net: Unknown Pin: Pin D-A
+Add Pin To Net: Unknown Pin: Pin D-C
+Change Net Name : Old Net Name=NetD4_C New Net Name=NetD_C
+Add Class Member: Failed to add class member : Component D SS12-E3/61T

@@ -1,0 +1,33 @@
+Change Physical Footprint: Designator=BT1 Old Footprint=BAT_BAT-HLD-001 New Footprint=BAT_BAT-HLD-001
+Change Physical Footprint: Designator=C1 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=C2 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=C3 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=C4 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=C5 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=C6 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=C7 Old Footprint=Cap_0805 New Footprint=Cap_0805
+Change Physical Footprint: Designator=Cap1 Old Footprint=CAP_B3528 New Footprint=CAP_B3528
+Change Physical Footprint: Designator=Cap2 Old Footprint=CAP_B3528 New Footprint=CAP_B3528
+Change Physical Footprint: Designator=Cap3 Old Footprint=CAP_B3528 New Footprint=CAP_B3528
+Change Physical Footprint: Designator=con1 Old Footprint=Connector_2pin New Footprint=Connector_2pin
+Change Physical Footprint: Designator=D1 Old Footprint=Diotec_1N4007_MFG New Footprint=Diotec_1N4007_MFG
+Change Physical Footprint: Designator=D2 Old Footprint=DO-214AC New Footprint=DO-214AC
+Change Physical Footprint: Designator=D3 Old Footprint=DO-214AC New Footprint=DO-214AC
+Change Physical Footprint: Designator=D4 Old Footprint=SOD-323 New Footprint=SOD-323
+Change Physical Footprint: Designator=IC1 Old Footprint=SO16W New Footprint=SO16W
+Change Physical Footprint: Designator=J1 Old Footprint=CONN12-07-F-S-200_SAI New Footprint=CONN12-07-F-S-200_SAI
+Change Physical Footprint: Designator=J2 Old Footprint=CONN12-07-F-S-200_SAI New Footprint=CONN12-07-F-S-200_SAI
+Change Physical Footprint: Designator=L1 Old Footprint=IND - 0805 New Footprint=IND - 0805
+Change Physical Footprint: Designator=MOSFET1 Old Footprint=TSOT23-6_419BL_ONS New Footprint=TSOT23-6_419BL_ONS
+Change Physical Footprint: Designator=R1 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R2 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R3 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R4 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R5 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R6 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R7 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=R8 Old Footprint=Res_0603 New Footprint=Res_0603
+Change Physical Footprint: Designator=U1 Old Footprint=MSP430G2x53_QFN New Footprint=MSP430G2x53_QFN
+Change Physical Footprint: Designator=U2 Old Footprint=SOP65P490X110-8N New Footprint=SOP65P490X110-8N
+Change Physical Footprint: Designator=USB1 Old Footprint=MICRO QTZB5.0 New Footprint=MICRO QTZB5.0
+Change Physical Footprint: Designator=USB to Serial Converter Old Footprint=TSSOP28 New Footprint=TSSOP28

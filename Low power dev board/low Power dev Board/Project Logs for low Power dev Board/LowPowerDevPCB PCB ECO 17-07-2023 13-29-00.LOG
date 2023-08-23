@@ -1,0 +1,60 @@
+Removed Pin From Net: NetName=+VBAT Pin=D2-A
+Removed Pin From Net: NetName=VIN Pin=D2-C
+Removed Pin From Net: NetName=+5V_USB Pin=D3-A
+Removed Pin From Net: NetName=VIN Pin=D3-C
+Removed Pin From Net: NetName=GND Pin=H2-4
+Removed Pin From Net: NetName=GND Pin=H2-5
+Removed Pin From Net: NetName=GND Pin=H2-6
+Removed Pin From Net: NetName=GND Pin=H2-7
+Removed Pin From Net: NetName=GND Pin=H2-8
+Added Component: Designator=D2(DO-214AC)
+Added Component: Designator=D3(DO-214AC)
+Add object: Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))
+Add object: Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))
+Added Pin To Net: NetName=+VBAT Pin=D2-A
+Added Pin To Net: NetName=VIN Pin=D2-C
+Added Pin To Net: NetName=+5V_USB Pin=D3-A
+Added Pin To Net: NetName=VIN Pin=D3-C
+Add Pin To Net: Unknown Pin: Pin J1-01
+Add Pin To Net: Unknown Pin: Pin J2-09
+Add Pin To Net: Unknown Pin: Pin J2-10
+Add Pin To Net: Unknown Pin: Pin J2-11
+Add Pin To Net: Unknown Pin: Pin J2-12
+Added Pin To Net: NetName=NetJ1_02 Pin=U1-25
+Added Net: Name=NetJ1_02
+Added Pin To Net: NetName=NetJ1_03 Pin=U1-26
+Added Net: Name=NetJ1_03
+Added Pin To Net: NetName=NetJ1_04 Pin=U1-17
+Added Net: Name=NetJ1_04
+Added Pin To Net: NetName=NetJ1_05 Pin=U1-16
+Added Net: Name=NetJ1_05
+Added Pin To Net: NetName=NetJ1_06 Pin=U1-15
+Added Net: Name=NetJ1_06
+Added Pin To Net: NetName=NetJ1_07 Pin=U1-11
+Added Net: Name=NetJ1_07
+Added Pin To Net: NetName=NetJ1_08 Pin=U1-10
+Added Net: Name=NetJ1_08
+Added Pin To Net: NetName=NetJ1_09 Pin=U1-9
+Added Net: Name=NetJ1_09
+Added Pin To Net: NetName=NetJ1_10 Pin=U1-4
+Added Net: Name=NetJ1_10
+Added Pin To Net: NetName=NetJ1_11 Pin=U1-2
+Added Net: Name=NetJ1_11
+Added Pin To Net: NetName=NetJ1_12 Pin=U1-31
+Added Net: Name=NetJ1_12
+Added Pin To Net: NetName=NetJ2_01 Pin=U1-7
+Added Net: Name=NetJ2_01
+Added Pin To Net: NetName=NetJ2_02 Pin=U1-6
+Added Net: Name=NetJ2_02
+Added Pin To Net: NetName=NetJ2_03 Pin=U1-12
+Added Net: Name=NetJ2_03
+Added Pin To Net: NetName=NetJ2_04 Pin=U1-13
+Added Net: Name=NetJ2_04
+Added Pin To Net: NetName=NetJ2_05 Pin=U1-14
+Added Net: Name=NetJ2_05
+Added Pin To Net: NetName=NetJ2_06 Pin=U1-18
+Added Net: Name=NetJ2_06
+Added Pin To Net: NetName=NetJ2_07 Pin=U1-19
+Added Net: Name=NetJ2_07
+Added Pin To Net: NetName=NetJ2_08 Pin=U1-20
+Added Net: Name=NetJ2_08
