@@ -1,0 +1,47 @@
+Altium Designer Pick and Place,Locations,,,,,
+D:\SLT-Internship\projects\Low,power dev boa,rd\low Power dev Board,\Project Outpu,ts for low Pow,er dev Bo,ard\Pick Place\Pick Place for LPDB.txt
+,,,,,,
+==============================,==============,======================,==============,==============,=========,=================
+File Design Information:,,,,,,
+,,,,,,
+Date:       31/08/23,,,,,,
+Time:       15:27,,,,,,
+Revision:   69,,,,,,
+Variant:    No variations,,,,,,
+Units used: mil,,,,,,
+,,,,,,
+Designator Comment,Layer,Footprint,Center-X(mil),Center-Y(mil),Rotation,Description
+USB1       USB_Socket,TopLayer,MICRO_QTZB5.0,-461.811,1144.98,180,""""""
+U3         PL2303HX,TopLayer,TSSOP28,-95.189,1056.102,0,"""USB to RS232 TSSOP28"""
+U2         LM3485MM,TopLayer,SOP65P490X110-8N,295.276,807.087,180,"""4.5-35V, Hysteretic Non-Synchronous PFET Buck Controller"""
+"U1         ""MSP430G2x53 QFN-32",""" TopLayer",MSP430G2x53_QFN,334.646,236.22,270,"""QFN-32-EP(5x5) Microcontroller Units (MCUs/MPUs/SOCs) ROHS. Texas Instruments."""
+R8         Resistor,BottomLayer,Res_0603,560.433,964.567,180,""""""
+R7         Resistor,BottomLayer,Res_0603,423.819,1102.362,0,""""""
+R6         Resistor,BottomLayer,Res_0603,98.425,797.835,270,""""""
+R5         Resistor,BottomLayer,Res_0603,-443.504,-295.276,0,""""""
+R4         Resistor,BottomLayer,Res_0603,-560.433,610.236,180,""""""
+R3         Resistor,BottomLayer,Res_0603,-551.181,-28.937,270,""""""
+R2         Resistor,BottomLayer,Res_0603,-610.236,-28.937,270,""""""
+R1         Resistor,BottomLayer,Res_0603,531.496,59.055,90,""""""
+MOSFET1    FDC5614P,TopLayer,TSOT23-6_419BL_ONS,604.431,807.087,0,"""No Description Available"""
+L1         MLZ2012N220LT000,BottomLayer,IND_-_0805,787.402,767.716,0,"""22A?H Shielded Multilayer Inductor 300mA 670mOhm 0805 (2012 Metric)"""
+J3         PJ-002B,TopLayer,CUI_PJ-002B,-938.976,846.457,90,"""2.5 x 6.5 mm, 2.5 A, Horizontal, Through Hole, Dc Power Jack Connector"""
+J2         DW-12-13-T-S-827,TopLayer,CONN12-07-F-S-200_SAI,784.252,-548.425,90,"""No Description Available"""
+J1         DW-12-13-T-S-827,TopLayer,CONN12-07-F-S-200_SAI,-984.252,-548.425,90,"""No Description Available"""
+IC1        DS3231,TopLayer,SO16W,-728.346,314.961,180,"""Real Time Clock (RTC) IC Clock/Calendar - IA?C, 2-Wire Serial 8-SOIC (0.154, 3.90mm Width)"""
+D3         Diode,BottomLayer,DO-214AC,-348.819,767.716,180,""""""
+D2         Diode,BottomLayer,DO-214AC,-275.591,590.551,180,""""""
+D1         Diode,BottomLayer,Diode_SMD,59.055,-178.819,90,""""""
+CR1        SS12-E3/61T,BottomLayer,SMA(DO-214AC)_VIS,492.126,562.731,90,"""No Description Available"""
+Cap3       Polarized_Cap,BottomLayer,CAP_B3528,-492.126,944.882,180,""""""
+Cap2       Polarized_Cap,BottomLayer,CAP_B3528,767.716,649.606,180,""""""
+Cap1       Polarized_Cap,BottomLayer,CAP_B3528,0,610.236,270,""""""
+C8         Cap,TopLayer,Cap_0805,196.85,1181.102,270,""""""
+C7         Cap,BottomLayer,Cap_0805,417.756,964.567,180,""""""
+C6         Cap,BottomLayer,Cap_0805,0,807.087,270,""""""
+C5         Cap,BottomLayer,Cap_0805,-566.496,688.976,180,""""""
+C4         Cap,BottomLayer,Cap_0805,629.921,59.055,90,""""""
+C3         Cap,BottomLayer,Cap_0805,826.772,354.331,90,""""""
+C2         Cap,BottomLayer,Cap_0805,728.346,354.331,90,""""""
+C1         Cap,BottomLayer,Cap_0805,629.921,354.331,90,""""""
+BT1        BAT-HLD-001,TopLayer,BAT_BAT-HLD-001,-19.685,-728.346,180,"""Battery Retainer Coin, 20.0mm 1 Cell SMD (SMT) Tab"""

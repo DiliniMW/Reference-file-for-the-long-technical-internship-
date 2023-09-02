@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 15:33:54 On 31/08/2023
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [low Power dev Board.PrjPcb]
+   Generated File[Bill of Materials-low Power dev Board.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 15:33:57 On 31/08/2023

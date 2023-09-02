@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: LPDB.PcbDoc   31/08/2023  14:45:44
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : LPDB.TXT
+ASCII RectHoles File : LPDB-RectHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.2mm (8mil)                                              Round             5         PTH        7.99mm (0.31inch)
+T2      0.279mm (11mil)                                           Round             125       PTH        527.92mm (20.78inch)
+T3      0.3mm (12mil)                                             Round             73        PTH        294.13mm (11.58inch)
+T4      0.5mm (20mil)                                             Round             2         PTH        4.00mm (0.16inch)
+T5      0.991mm (39mil)                                           Round             24        PTH        100.80mm (3.97inch)
+T6      1mm (39mil)                                               Rectangle         3         PTH        29.18mm (1.15inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              232
+
+Total Processing Time (hh:mm:ss) : 00:00:01
